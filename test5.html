@@ -1,0 +1,62 @@
+<html>
+	<head>
+		<title>test5</title>
+		
+		<script type="text/javascript">
+			function validate(){
+				var name=document.getElementById("name").value;
+				var password=document.getElementById("password").value;
+				var phone=document.getElementById("phone").value;
+				var email=document.getElementById("email").value;
+				if(name.length>25){
+					alert("Name should not exceed 25 characters;");
+					return false;
+				}
+				if(password.length<8){
+					alert("password should contain atleast 8 characters");
+					return false;
+				}
+				
+					
+				
+				if((phone.length!=10) ){
+					alert("Phone number should be only 10 characters");
+					return false;
+				}
+				if((phone.match(/^\d{10}$/))==null ){
+					alert("Phone number should contain only numerical digits");
+					return false;
+				}
+				if(email.search(/^[a-zA-Z0-9]+\@[a-zA-Z0-9]+\.[a-zA-Z]+$/)){
+					alert("Email should be of the form name@domain");
+					return false;
+				}
+			}
+		</script>
+		
+		<style type="text/css">
+		#name{color:green; background-color:lightskyblue;font-style:times;}
+		#password{color:cyan; background-color:grey;}
+		
+		</style>
+	</head>
+	
+<body  align=center bgcolor="orange">
+	<p><h1><strong>Registration Form</strong></h1>
+		<img src="200px-Rotating_earth_(large).gif" alt="200px-Rotating_earth_(large).gif" />
+	
+	<form  action="test5.php" method="post"  enctype="multipart/form-data" onSubmit="return validate();">
+		<table align=center>
+	
+	<tr><td>Name</td>     <td><input type="text" id="name" name="name"/><br /></td></tr>
+	<tr><td>Password</td>     <td><input type="password" id="password" name="password"/><br /></td></tr>
+	<tr><td>Address</td>   <td><textarea id="Address" name="address" rows="4" cols="20" > </textarea><br /></td></tr>
+	<tr><td>Phone</td>      <td> <input type="text"  id="phone" name="phone" /><br /></td></tr>
+	<tr><td>Email</td>       <td><input type="text" id="email" name="email"  /><br /></td></tr>
+	<tr><td><input type="file" name="file"  id="file"/></td></tr>
+	<tr><td><input type="submit" name="submit" value="submit" /></td></tr>
+	</table>
+	</form>
+	
+</body>
+</html>
